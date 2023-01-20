@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Cabecalho</title>
 </head>
 <body>
-
+	<a href="home.jsp">Início</a> <br>
+	<a href="cadastro.jsp">Cadastro</a><br>
+	<a href="UsuarioController">Lista de Usuários</a><br>
 </body>
 </html>

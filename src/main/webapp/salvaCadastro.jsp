@@ -23,6 +23,7 @@
 	usuDAO.cadastro(usu);
 	%>
 	<h1>Salvo com Sucesso!</h1>
-	
+	<a href="cadastro.jsp">Novo Cadastro</a><br>
+	<a href="UsuarioController">Lista de Usuários</a><br>
 </body>
 </html>

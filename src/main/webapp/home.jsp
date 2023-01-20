@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Página Inicial</title>
 </head>
 <body>
-
+<jsp:include page="cabecalho.jsp"></jsp:include>
+<h1>Learning Java Web</h1>
 </body>
 </html>

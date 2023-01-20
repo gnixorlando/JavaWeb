@@ -8,7 +8,8 @@
 <title>Cadastro</title>
 </head>
 <body>
-	<form action="salvaCadastro" method = "post">
+	<jsp:include page="cabecalho.jsp"></jsp:include>
+	<form action="salvaCadastro.jsp" method = "post">
 	<label>Nome: </label>
 	<input type= "text" name = "nome">
 	<label>Email: </label>
