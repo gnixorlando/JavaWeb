@@ -21,6 +21,7 @@ List<Usuario> listaResultado = (List<Usuario>)request.getAttribute("list");
 	<th>Nome</th>
 	<th>Email</th>
 	<th>Senha</th>
+	<th>Excluir</th>
 </tr>
 <% 
 for (Usuario u:listaResultado) {
@@ -30,6 +31,7 @@ for (Usuario u:listaResultado) {
 	<th><%=u.getNome() %></th>
 	<th><%=u.getEmail() %></th>
 	<th><%=u.getSenha() %></th>
+	<th><a href="UsuarioController?action=del&id=<%=u.getId() %>">Excluir</a></th>
 </tr>
 <% 
 }

@@ -30,13 +30,22 @@ public class UsuarioController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws jakarta.servlet.ServletException,IOException{
 		Usuario usu = new Usuario();
+		String action = request.getParameter("action");
 		UsuarioDAO usuDao = new UsuarioDAO();
+		
+		if(action != null && action.equals("lis")) {
 		
 		List<Usuario> list = usuDao.searchAll(usu);
         request.setAttribute("list", list);
         RequestDispatcher saida = request.getRequestDispatcher("listaUsu.jsp");
         saida.forward(request, response);
-	
+		} else if (action != null && action.equals("del")) {
+			String id = request.getParameter("id");
+			usu.setId(Integer.parseInt(id));
+			usuDao.remove(usu);
+			
+			response.sendRedirect("UsuarioController?action=lis");
+		}
 	}
 
 	
