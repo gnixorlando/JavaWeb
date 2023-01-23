@@ -33,6 +33,28 @@ public class UsuarioDAO {
 		}
 
 	}
+	public Usuario buscarId (Integer id) {
+		Usuario usuRetorno = null;
+		String sql = "select * from usuario where id=?";
+		
+		try {
+			PreparedStatement prepared = con.prepareStatement(sql);
+			prepared.setInt(1, id);
+			ResultSet resultado = prepared.executeQuery();
+			
+			if (resultado.next()) {
+				usuRetorno=new Usuario();
+				usuRetorno.setId(resultado.getInt("id"));
+				usuRetorno.setNome(resultado.getString("nome"));
+				usuRetorno.setEmail(resultado.getString("email"));
+				usuRetorno.setSenha(resultado.getString("senha"));
+			}
+			System.out.println("Usuário Localizado!");
+		} catch (Exception e) {
+			System.out.println(e);
+		}return usuRetorno;
+		
+	}
 
 	public void edit(Usuario usuario) {
 		String sql = "UPDATE USUARIO SET NOME = ?, EMAIL = ?,SENHA = ? where id = ?";

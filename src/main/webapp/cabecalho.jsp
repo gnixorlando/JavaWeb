@@ -8,7 +8,7 @@
 </head>
 <body>
 	<a href="home.jsp">Início</a> <br>
-	<a href="cadastro.jsp">Cadastro</a><br>
-	<a href="UsuarioController">Lista de Usuários</a><br>
+	<a href="UsuarioController?action=cad">Cadastro</a><br>
+	<a href="UsuarioController?action=lis">Lista de Usuários</a><br>
 </body>
 </html>
