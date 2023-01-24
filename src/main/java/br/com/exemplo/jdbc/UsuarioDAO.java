@@ -113,4 +113,27 @@ public class UsuarioDAO {
 			System.out.println(e);
 		} return list;
 	}
+	public Usuario autenticacao (Usuario usuario) {
+		Usuario usuRetorno = null;
+		String sql = "select * from usuario where email=? and senha = ?";
+		
+		try {
+			PreparedStatement prepared = con.prepareStatement(sql);
+			prepared.setString(1, usuario.getEmail());
+			prepared.setString(2, usuario.getSenha());
+			ResultSet resultado = prepared.executeQuery();
+			
+			if (resultado.next()) {
+				usuRetorno=new Usuario();
+				usuRetorno.setId(resultado.getInt("id"));
+				usuRetorno.setNome(resultado.getString("nome"));
+				usuRetorno.setEmail(resultado.getString("email"));
+				usuRetorno.setSenha(resultado.getString("senha"));
+			}
+			System.out.println("Usuário Localizado!");
+		} catch (Exception e) {
+			System.out.println(e);
+		}return usuRetorno;
+		
+	}
 }

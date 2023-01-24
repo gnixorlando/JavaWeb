@@ -7,8 +7,10 @@
 <title>Cabecalho</title>
 </head>
 <body>
+	<a href="login.jsp">Login</a> <br>
 	<a href="home.jsp">Início</a> <br>
 	<a href="UsuarioController?action=cad">Cadastro</a><br>
 	<a href="UsuarioController?action=lis">Lista de Usuários</a><br>
+	<a href="autenticador">Sair</a><br>
 </body>
 </html>
